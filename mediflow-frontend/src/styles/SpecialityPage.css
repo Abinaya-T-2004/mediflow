@@ -1,0 +1,1051 @@
+/* ============================================
+   SPECIALITY PAGE — FULL CLEAN CSS
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* ============================================
+   HEADER SECTION
+   ============================================ */
+
+.speciality-page-header {
+  width: 100%;
+  min-height: 340px;
+  background: linear-gradient(135deg, #0D47A1 0%, #1877F2 50%, #00c6ff 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.speciality-page-header::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border: 60px solid rgba(255, 255, 255, 0.05);
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  animation: ringPulse 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.speciality-page-header::after {
+  content: '';
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  border: 40px solid rgba(255, 255, 255, 0.06);
+  bottom: -100px;
+  right: 10%;
+  animation: ringPulse 8s ease-in-out infinite reverse;
+  pointer-events: none;
+}
+
+.speciality-page-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+  animation: headerFadeDown 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.speciality-page-title::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 60%
+  );
+  transform: skewX(-15deg);
+  animation: titleShimmer 3s ease 1s infinite;
+}
+
+.speciality-page-tagline {
+  font-size: clamp(0.85rem, 1.8vw, 1.05rem);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.80);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+  animation: headerFadeDown 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+}
+
+.speciality-page-name {
+  font-size: clamp(1.4rem, 3.5vw, 2.4rem);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 1;
+  animation: headerFadeDown 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
+  padding: 8px 28px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+  margin-top: 0.5rem;
+}
+
+/* ============================================
+   HOSPITAL GRID
+   ============================================ */
+
+.speciality-hospital-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  padding: 4rem 5rem;
+  background: #F0F6FF;
+  min-height: 60vh;
+}
+
+/* ============================================
+   HOSPITAL CARD
+   ============================================ */
+
+.speciality-hospital-card {
+  background: #ffffff;
+  border: 1px solid #D1DDF5;
+  border-radius: 20px;
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  transition:
+    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+  animation: cardEntrance 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.speciality-hospital-card:nth-child(1)  { animation-delay: 0.05s; }
+.speciality-hospital-card:nth-child(2)  { animation-delay: 0.10s; }
+.speciality-hospital-card:nth-child(3)  { animation-delay: 0.15s; }
+.speciality-hospital-card:nth-child(4)  { animation-delay: 0.20s; }
+.speciality-hospital-card:nth-child(5)  { animation-delay: 0.25s; }
+.speciality-hospital-card:nth-child(6)  { animation-delay: 0.30s; }
+.speciality-hospital-card:nth-child(7)  { animation-delay: 0.35s; }
+.speciality-hospital-card:nth-child(8)  { animation-delay: 0.40s; }
+.speciality-hospital-card:nth-child(9)  { animation-delay: 0.45s; }
+.speciality-hospital-card:nth-child(10) { animation-delay: 0.50s; }
+.speciality-hospital-card:nth-child(11) { animation-delay: 0.55s; }
+.speciality-hospital-card:nth-child(12) { animation-delay: 0.60s; }
+
+.speciality-hospital-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #1565C0, #1877F2, #00c6ff);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border-radius: 20px 20px 0 0;
+}
+
+.speciality-hospital-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(24, 119, 242, 0.06) 50%,
+    transparent 60%
+  );
+  transform: skewX(-15deg);
+  transition: left 0s;
+  pointer-events: none;
+}
+
+.speciality-hospital-card:hover {
+  transform: translateY(-10px);
+  border-color: #1877F2;
+  box-shadow: 0 24px 55px rgba(24, 119, 242, 0.15);
+}
+
+.speciality-hospital-card:hover::before {
+  transform: scaleX(1);
+}
+
+.speciality-hospital-card:hover::after {
+  left: 160%;
+  transition: left 0.65s ease;
+}
+
+.hospital-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+
+.hospital-number {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #E8F0FE;
+  color: #1565C0;
+  font-size: 13px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.04em;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.speciality-hospital-card:hover .hospital-number {
+  background: #1877F2;
+  color: #ffffff;
+  transform: rotate(-6deg) scale(1.12);
+}
+
+.hospital-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #0F6E56;
+  background: #E1F5EE;
+  border-radius: 100px;
+  padding: 4px 12px;
+  letter-spacing: 0.04em;
+}
+
+.hospital-status::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #1D9E75;
+  display: inline-block;
+  animation: statusBlink 1.8s ease-in-out infinite;
+}
+
+.speciality-hospital-card h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #0D1B3E;
+  line-height: 1.35;
+  transition: color 0.2s ease;
+  padding-left: 0.85rem;
+  position: relative;
+}
+
+.speciality-hospital-card h3::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 3px;
+  bottom: 3px;
+  width: 3px;
+  background: linear-gradient(to bottom, #1877F2, #00c6ff);
+  border-radius: 100px;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.speciality-hospital-card:hover h3 {
+  color: #1565C0;
+}
+
+.speciality-hospital-card:hover h3::before {
+  transform: scaleY(1);
+}
+
+.hospital-doctor {
+  font-size: 14px;
+  font-weight: 600;
+  color: #5A6888;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hospital-doctor::before {
+  content: '👨‍⚕️';
+  font-size: 15px;
+}
+
+.hospital-location {
+  font-size: 13px;
+  color: #5A6888;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.speciality-hospital-card .hero-btn {
+  margin-top: auto;
+  padding: 11px 22px;
+  border: none;
+  border-radius: 10px;
+  background: #1877F2;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.25s ease,
+    background 0.2s ease;
+  width: 100%;
+}
+
+.speciality-hospital-card .hero-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.22) 50%,
+    transparent 60%
+  );
+  transform: skewX(-15deg);
+  transition: left 0s;
+}
+
+.speciality-hospital-card .hero-btn:hover {
+  background: #1565C0;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(24, 119, 242, 0.35);
+}
+
+.speciality-hospital-card .hero-btn:hover::before {
+  left: 160%;
+  transition: left 0.55s ease;
+}
+
+.speciality-hospital-card .hero-btn:active {
+  transform: scale(0.97) translateY(0);
+  box-shadow: none;
+}
+
+/* ============================================
+   SPECIALITY INFO SECTION
+   ============================================ */
+
+.speciality-info-section {
+  width: 100%;
+  padding: 5rem 2rem;
+  background: radial-gradient( rgb(249, 248, 248),rgb(255, 255, 255));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.speciality-info-section::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(24,119,242,0.08) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.info-main-title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 900;
+  color: #0D1B3E;
+  letter-spacing: -0.03em;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.info-main-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #1877F2, #00c6ff);
+  border-radius: 100px;
+  margin: 10px auto 0;
+  animation: expandBar 0.8s ease 0.3s both;
+  transform-origin: center;
+}
+
+/* ============================================
+   CIRCLE LAYOUT
+   ============================================ */
+
+.speciality-circle-layout {
+  position: relative;
+  width: 620px;
+  height: 620px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* Outer dashed orbit ring */
+.speciality-circle-layout::before {
+  content: '';
+  position: absolute;
+  width: 540px;
+  height: 540px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(24, 119, 242, 0.25);
+  animation: spinOrbit 30s linear infinite;
+  pointer-events: none;
+}
+
+/* Inner orbit ring */
+.speciality-circle-layout::after {
+  content: '';
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  border: 1px solid rgba(24, 119, 242, 0.12);
+  animation: spinOrbit 20s linear infinite reverse;
+  pointer-events: none;
+}
+
+/* ── CENTER LOGO — glowing border ── */
+.center-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  animation: centerPulse 3s ease-in-out infinite;
+
+  /* Conic gradient spinning border */
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    conic-gradient(
+      from var(--angle, 0deg),
+      #1877F2,
+      #00c6ff,
+      #6a5cff,
+      #00e1ff,
+      #1877F2
+    ) border-box;
+  border: 3px solid transparent;
+  animation: spinBorderCenter 4s linear infinite, centerPulse 3s ease-in-out infinite;
+}
+
+.center-logo img {
+  width: 85px;
+  height: 85px;
+  object-fit: contain;
+}
+
+/* ── CIRCLE ITEMS — dashed + glow border ── */
+.circle-item {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  cursor: default;
+  z-index: 5;
+
+  /* Gradient border trick */
+  background:
+    linear-gradient(#1877F2, #1565C0) padding-box,
+    linear-gradient(135deg, #00c6ff, #6a5cff, #1877F2) border-box;
+  border: 2.5px solid transparent;
+  box-shadow:
+    0 4px 15px rgba(24, 119, 242, 0.12),
+    inset 0 0 0 1px rgba(255,255,255,0.8);
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.3s ease;
+}
+
+.circle-item::before {
+  display: none;
+}
+
+/* Outer glow ring on each item */
+.circle-item::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from var(--angle, 0deg),
+    rgba(24,119,242,0.4),
+    rgba(0,198,255,0.2),
+    rgba(106,92,255,0.3),
+    rgba(0,225,255,0.2),
+    rgba(24,119,242,0.4)
+  );
+  filter: blur(6px);
+  z-index: -1;
+  opacity: 0;
+  animation: spinBorderItem 4s linear infinite;
+  transition: opacity 0.3s ease;
+}
+
+.circle-item:hover {
+  background:
+    linear-gradient(#1877F2, #1565C0) padding-box,
+    linear-gradient(135deg, #00c6ff, #6a5cff, #1877F2) border-box;
+  color: #ffffff;
+  box-shadow:
+    0 12px 32px rgba(24, 119, 242, 0.40),
+    0 0 0 4px rgba(24,119,242,0.12);
+}
+
+.circle-item:hover::after {
+  opacity: 1;
+}
+
+/* ── TOP ── */
+.top-circle {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: floatItem 4s ease-in-out infinite;
+  animation-delay: 0s;
+}
+.top-circle:hover {
+  transform: translateX(-50%) scale(1.12);
+}
+
+/* ── TOP LEFT ── */
+.left-circle {
+  top: 155px;
+  left: 18px;
+  animation: floatItem 4s ease-in-out infinite;
+  animation-delay: 0.4s;
+}
+.left-circle:hover {
+  transform: scale(1.12);
+}
+
+/* ── TOP RIGHT ── */
+.right-circle {
+  top: 155px;
+  right: 18px;
+  animation: floatItem 4s ease-in-out infinite;
+  animation-delay: 0.8s;
+}
+.right-circle:hover {
+  transform: scale(1.12);
+}
+
+/* ── BOTTOM LEFT ── */
+.bottom-left-circle {
+  bottom: 55px;
+  left: 80px;
+  animation: floatItem 4s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+.bottom-left-circle:hover {
+  transform: scale(1.12);
+}
+
+/* ── BOTTOM RIGHT ── */
+.bottom-right-circle {
+  bottom: 55px;
+  right: 80px;
+  animation: floatItem 4s ease-in-out infinite;
+  animation-delay: 1.6s;
+}
+.bottom-right-circle:hover {
+  transform: scale(1.12);
+}
+/* ============================================
+   SPECIALITY GALLERY SECTION
+   ============================================ */
+
+.speciality-gallery-section {
+  width: 100%;
+  padding: 80px 90px;
+  background: #f4f8fb;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* ── ROW BASE ── */
+
+.gallery-row {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-duration: 0.9s;
+  animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.normal-row {
+  flex-direction: row;
+  animation-name: rowSlideRight;
+}
+
+.reverse-row {
+  flex-direction: row-reverse;
+  animation-name: rowSlideLeft;
+}
+
+/* Stagger each row */
+.gallery-row:nth-child(1) { animation-delay: 0.1s; }
+.gallery-row:nth-child(2) { animation-delay: 0.25s; }
+.gallery-row:nth-child(3) { animation-delay: 0.4s; }
+.gallery-row:nth-child(4) { animation-delay: 0.55s; }
+.gallery-row:nth-child(5) { animation-delay: 0.7s; }
+.gallery-row:nth-child(6) { animation-delay: 0.85s; }
+
+/* ── IMAGE BOX ── */
+
+.gallery-image-box {
+  width: 50%;
+  flex-shrink: 0;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 12px 40px rgba(0, 119, 255, 0.10);
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.4s ease;
+}
+
+/* Blue line sweep on hover */
+.gallery-image-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(0, 119, 255, 0.18) 50%,
+    transparent 60%
+  );
+  transform: skewX(-15deg);
+  transition: left 0.6s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.gallery-image-box:hover::before {
+  left: 160%;
+}
+
+/* Blue bottom border reveal */
+.gallery-image-box::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: linear-gradient(90deg, #0077ff, #00c6ff);
+  border-radius: 0 0 24px 24px;
+  transition: width 0.5s ease;
+  z-index: 2;
+}
+
+.gallery-image-box:hover::after {
+  width: 100%;
+}
+
+.gallery-image-box:hover {
+  transform: scale(1.03) translateY(-6px);
+  box-shadow: 0 24px 60px rgba(0, 119, 255, 0.18);
+}
+
+.gallery-image-box img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.gallery-image-box:hover img {
+  transform: scale(1.07);
+}
+
+/* ── CONTENT BOX ── */
+
+.gallery-content-box {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 10px;
+}
+
+/* Different left border color per row */
+.normal-row .gallery-content-box {
+  border-left: 4px solid #0077ff;
+  padding-left: 28px;
+  animation-name: contentFadeUp;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.reverse-row .gallery-content-box {
+  border-right: 4px solid #00c6ff;
+  border-left: none;
+  padding-right: 28px;
+  padding-left: 10px;
+  text-align: right;
+  animation-name: contentFadeDown;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+/* Stagger content boxes */
+.gallery-row:nth-child(1) .gallery-content-box { animation-delay: 0.3s; }
+.gallery-row:nth-child(2) .gallery-content-box { animation-delay: 0.45s; }
+.gallery-row:nth-child(3) .gallery-content-box { animation-delay: 0.6s; }
+.gallery-row:nth-child(4) .gallery-content-box { animation-delay: 0.75s; }
+.gallery-row:nth-child(5) .gallery-content-box { animation-delay: 0.9s; }
+.gallery-row:nth-child(6) .gallery-content-box { animation-delay: 1.05s; }
+
+.gallery-content-box h2 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #0d3b66;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  position: relative;
+  display: inline-block;
+}
+
+/* Animated underline on h2 */
+.gallery-content-box h2::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0077ff, #00c6ff);
+  border-radius: 100px;
+  transition: width 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.reverse-row .gallery-content-box h2::after {
+  left: auto;
+  right: 0;
+}
+
+.gallery-row:hover .gallery-content-box h2::after {
+  width: 100%;
+}
+
+.gallery-content-box p {
+  font-size: 17px;
+  line-height: 1.9;
+  color: #5a6888;
+}
+
+/* ── NUMBER BADGE (optional — shows row number) ── */
+
+.gallery-content-box h2 span.row-number {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1877f2;
+  background: #e8f0fe;
+  border-radius: 8px;
+  padding: 3px 10px;
+  margin-bottom: 8px;
+  letter-spacing: 0.06em;
+}
+
+/* ============================================
+   KEYFRAMES — each animation is different
+   ============================================ */
+
+/* Row slides in from left */
+@keyframes rowSlideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Row slides in from right */
+@keyframes rowSlideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Content fades up */
+@keyframes contentFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Content fades down */
+@keyframes contentFadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── RESPONSIVE ── */
+
+@media (max-width: 960px) {
+  .speciality-gallery-section {
+    padding: 60px 30px;
+    gap: 60px;
+  }
+
+  .gallery-row,
+  .reverse-row {
+    flex-direction: column !important;
+    gap: 30px;
+  }
+
+  .gallery-image-box,
+  .gallery-content-box {
+    width: 100%;
+  }
+
+  .reverse-row .gallery-content-box {
+    border-right: none;
+    border-left: 4px solid #00c6ff;
+    padding-right: 10px;
+    padding-left: 28px;
+    text-align: left;
+  }
+
+  .reverse-row .gallery-content-box h2::after {
+    left: 0;
+    right: auto;
+  }
+
+  .gallery-image-box img {
+    height: 260px;
+  }
+
+  .gallery-content-box h2 {
+    font-size: 24px;
+  }
+}
+
+/* ── ADD THESE NEW KEYFRAMES at the bottom ── */
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes spinBorderCenter {
+  from { --angle: 0deg; }
+  to   { --angle: 360deg; }
+}
+
+@keyframes spinBorderItem {
+  from { --angle: 0deg; }
+  to   { --angle: 360deg; }
+}
+
+/* ============================================
+   KEYFRAMES
+   ============================================ */
+
+@keyframes expandBar {
+  from { transform: scaleX(0); opacity: 0; }
+  to   { transform: scaleX(1); opacity: 1; }
+}
+
+@keyframes spinOrbit {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes centerPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 0 12px rgba(24, 119, 242, 0.06),
+      0 0 0 24px rgba(24, 119, 242, 0.03),
+      0 16px 40px rgba(24, 119, 242, 0.15);
+  }
+  50% {
+    box-shadow:
+      0 0 0 16px rgba(24, 119, 242, 0.10),
+      0 0 0 32px rgba(24, 119, 242, 0.04),
+      0 20px 50px rgba(24, 119, 242, 0.22);
+  }
+}
+
+@keyframes floatItem {
+  0%, 100% { margin-top: 0px; }
+  50%       { margin-top: -8px; }
+}
+
+@keyframes headerFadeDown {
+  from { opacity: 0; transform: translateY(-22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cardEntrance {
+  from { opacity: 0; transform: translateY(30px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes ringPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1);    opacity: 0.6; }
+  50%       { transform: translate(-50%, -50%) scale(1.08); opacity: 1;   }
+}
+
+@keyframes titleShimmer {
+  0%   { left: -100%; }
+  40%  { left: 160%;  }
+  100% { left: 160%;  }
+}
+
+@keyframes statusBlink {
+  0%, 100% { opacity: 1;   transform: scale(1);   }
+  50%       { opacity: 0.4; transform: scale(0.7); }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 1100px) {
+  .speciality-hospital-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 3rem 2.5rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .speciality-circle-layout {
+    width: 380px;
+    height: 380px;
+  }
+  .speciality-circle-layout::before {
+    width: 320px;
+    height: 320px;
+  }
+  .speciality-circle-layout::after {
+    width: 210px;
+    height: 210px;
+  }
+  .circle-item {
+    width: 85px;
+    height: 85px;
+    font-size: 12px;
+  }
+  .center-logo {
+    width: 100px;
+    height: 100px;
+  }
+  .center-logo img {
+    width: 55px;
+    height: 55px;
+  }
+  .bottom-left-circle { bottom: 30px; left: 40px; }
+  .bottom-right-circle { bottom: 30px; right: 40px; }
+}
+
+@media (max-width: 640px) {
+  .speciality-hospital-grid {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.25rem;
+  }
+  .speciality-page-header {
+    padding: 3rem 1.5rem;
+    min-height: 260px;
+  }
+}

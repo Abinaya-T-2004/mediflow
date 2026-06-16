@@ -1,0 +1,733 @@
+/* ============================================
+   BLOG PAGE
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.blog-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #f4f8fb;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.blog-hero {
+  width: 100%;
+  padding: 100px 90px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.blog-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.15;
+  pointer-events: none;
+  animation: floatCircle 8s ease-in-out infinite;
+}
+
+.blog-circle.circle1 {
+  width: 380px;
+  height: 380px;
+  background: #0077ff;
+  top: -120px;
+  left: -100px;
+}
+
+.blog-circle.circle2 {
+  width: 300px;
+  height: 300px;
+  background: #00c6ff;
+  bottom: -100px;
+  right: -80px;
+  animation-delay: 3s;
+}
+
+@keyframes floatCircle {
+  0%   { transform: translateY(0) translateX(0); }
+  50%  { transform: translateY(-25px) translateX(15px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+
+.blog-hero h1 {
+  font-size: 52px;
+  font-weight: 800;
+  color: #0d3b66;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
+  animation: fadeUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.blog-hero p {
+  font-size: 18px;
+  line-height: 1.9;
+  color: #5a6888;
+  max-width: 600px;
+  position: relative;
+  z-index: 1;
+  animation: fadeUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   BLOG CARDS SECTION
+   ============================================ */
+
+.blog-container {
+  width: 100%;
+  padding: 80px 90px;
+  background: #f4f8fb;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.blog-card {
+  background: #ffffff;
+  border: 1px solid #d1ddf5;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.3s ease,
+              border-color 0.3s ease;
+}
+
+/* Blue top bar reveal */
+.blog-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0077ff, #00c6ff);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 2;
+  border-radius: 20px 20px 0 0;
+}
+
+.blog-card:hover::before {
+  transform: scaleX(1);
+}
+
+.blog-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 24px 60px rgba(0, 119, 255, 0.14);
+  border-color: #1877f2;
+}
+
+.blog-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.blog-card:hover img {
+  transform: scale(1.07);
+}
+
+.blog-content {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.blog-content span {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1877f2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.blog-content h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0d3b66;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+}
+
+.blog-card:hover .blog-content h2 {
+  color: #1877f2;
+}
+
+.blog-content p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #5a6888;
+  flex: 1;
+}
+
+.blog-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #1565c0;
+  background: #e8f0fe;
+  border-radius: 100px;
+  padding: 5px 14px;
+  border: 1px solid #d1ddf5;
+  width: fit-content;
+  margin-top: 4px;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.blog-card:hover .blog-tag {
+  background: #1877f2;
+  color: #ffffff;
+  border-color: #1877f2;
+}
+
+/* ============================================
+   FEATURED BLOG SECTION
+   ============================================ */
+
+.featured-blog {
+  width: 100%;
+  padding: 80px 90px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.featured-left {
+  width: 45%;
+  flex-shrink: 0;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 16px 50px rgba(0, 119, 255, 0.14);
+}
+
+/* Shimmer sweep on image */
+.featured-left::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 60%
+  );
+  transform: skewX(-15deg);
+  transition: left 0.6s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.featured-left:hover::before {
+  left: 160%;
+}
+
+.featured-left img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.featured-left:hover img {
+  transform: scale(1.05);
+}
+
+.featured-right {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.featured-right > span {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #1877f2;
+  background: #e8f0fe;
+  border-radius: 100px;
+  padding: 7px 20px;
+  width: fit-content;
+}
+
+.featured-right h1 {
+  font-size: 36px;
+  font-weight: 800;
+  color: #0d3b66;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.featured-right > p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #5a6888;
+}
+
+/* Stats row */
+.featured-stats {
+  display: flex;
+  gap: 0;
+  margin-top: 10px;
+  border: 1px solid #d1ddf5;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.featured-stats div {
+  flex: 1;
+  padding: 22px 20px;
+  text-align: center;
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.featured-stats div:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background: #d1ddf5;
+}
+
+.featured-stats div:hover {
+  background: #f4f8fb;
+}
+
+.featured-stats div h2 {
+  font-size: 28px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #1565c0, #1877f2, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.featured-stats div p {
+  font-size: 13px;
+  font-weight: 600;
+  color: #5a6888;
+}
+
+/* ============================================
+   HEALTHCARE NEWS SECTION
+   ============================================ */
+
+.health-news {
+  width: 100%;
+  padding: 80px 90px;
+  background: #f4f8fb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.health-news h1 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #0d3b66;
+  text-align: center;
+  letter-spacing: -0.02em;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.health-news h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #0077ff, #00c6ff);
+  border-radius: 100px;
+}
+
+.health-news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.health-news-card {
+  background: #ffffff;
+  border: 1px solid #d1ddf5;
+  border-radius: 20px;
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.3s ease,
+              border-color 0.3s ease;
+}
+
+/* Left blue accent bar */
+.health-news-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, #0077ff, #00c6ff);
+  border-radius: 20px 0 0 20px;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.health-news-card:hover::before {
+  transform: scaleY(1);
+}
+
+.health-news-card:hover {
+  transform: translateY(-10px) translateX(4px);
+  box-shadow: 0 20px 50px rgba(0, 119, 255, 0.14);
+  border-color: #1877f2;
+}
+
+.health-news-card h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0d3b66;
+  line-height: 1.35;
+  transition: color 0.2s ease;
+}
+
+.health-news-card:hover h2 {
+  color: #1877f2;
+}
+
+.health-news-card p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #5a6888;
+  flex: 1;
+}
+
+.health-news-card span {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1877f2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: auto;
+}
+
+/* ============================================
+   HEALTHCARE TIPS SECTION
+   ============================================ */
+
+.health-tips {
+  width: 100%;
+  padding: 80px 90px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.health-tips h1 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #0d3b66;
+  text-align: center;
+  letter-spacing: -0.02em;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.health-tips h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #0077ff, #00c6ff);
+  border-radius: 100px;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.tip-card {
+  background: #f4f8fb;
+  border: 1px solid #d1ddf5;
+  border-radius: 20px;
+  padding: 36px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  cursor: default;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.3s ease,
+              background 0.3s ease,
+              border-color 0.3s ease;
+}
+
+.tip-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  background: #ffffff;
+  box-shadow: 0 20px 50px rgba(0, 119, 255, 0.14);
+  border-color: #1877f2;
+}
+
+.tip-card h2 {
+  font-size: 44px;
+  line-height: 1;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.tip-card:hover h2 {
+  transform: scale(1.25) rotate(-8deg);
+}
+
+.tip-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0d3b66;
+}
+
+.tip-card p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #5a6888;
+}
+
+/* ============================================
+   FAQ SECTION
+   ============================================ */
+
+.faq-section {
+  width: 100%;
+  padding: 80px 90px;
+  background: #f4f8fb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.faq-section h1 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #0d3b66;
+  text-align: center;
+  letter-spacing: -0.02em;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.faq-section h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #0077ff, #00c6ff);
+  border-radius: 100px;
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.faq-card {
+  background: #ffffff;
+  border: 1px solid #d1ddf5;
+  border-radius: 16px;
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.3s ease,
+              border-color 0.3s ease;
+}
+
+/* Left border reveal */
+.faq-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, #0077ff, #00c6ff);
+  border-radius: 16px 0 0 16px;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.faq-card:hover::before {
+  transform: scaleY(1);
+}
+
+.faq-card:hover {
+  transform: translateX(8px);
+  box-shadow: 0 12px 36px rgba(0, 119, 255, 0.12);
+  border-color: #1877f2;
+}
+
+.faq-card h2 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #0d3b66;
+  transition: color 0.2s ease;
+}
+
+.faq-card:hover h2 {
+  color: #1877f2;
+}
+
+.faq-card p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #5a6888;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .blog-hero,
+  .blog-container,
+  .featured-blog,
+  .health-news,
+  .health-tips,
+  .faq-section {
+    padding: 60px 40px;
+  }
+}
+
+@media (max-width: 860px) {
+  .blog-hero h1 {
+    font-size: 36px;
+  }
+
+  .blog-container {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: auto;
+  }
+
+  .featured-blog {
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .featured-left,
+  .featured-right {
+    width: 100%;
+  }
+
+  .featured-left img {
+    height: 280px;
+  }
+
+  .featured-right h1 {
+    font-size: 26px;
+  }
+
+  .health-news-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: auto;
+  }
+
+  .tips-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .faq-container {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 540px) {
+  .tips-grid {
+    grid-template-columns: 1fr;
+    max-width: 340px;
+    margin: auto;
+  }
+
+  .featured-stats {
+    flex-direction: column;
+  }
+
+  .featured-stats div:not(:last-child)::after {
+    display: none;
+  }
+}

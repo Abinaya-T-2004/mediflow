@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.patient-page {
+  min-height: 100vh;
+  background: #f4f8fb;
+}
+
+/* NAVBAR */
+
+.patient-navbar {
+  width: 100%;
+  height: 90px;
+
+  background: white;
+
+  border-bottom: 2px solid #dce6f0;
+
+  display: flex;
+  align-items: center;
+
+  padding-left: 50px;
+}
+
+.patient-logo {
+  width: 110px;
+}
+
+/* MAIN CONTAINER */
+
+.patient-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 50px 20px;
+}
+
+/* CARD */
+
+.patient-card {
+  width: 550px;
+
+  background: white;
+
+  padding: 40px;
+
+  border-radius: 20px;
+
+  box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+}
+
+.patient-card h1 {
+  text-align: center;
+
+  color: #0d3b66;
+
+  margin-bottom: 10px;
+
+  font-size: 36px;
+}
+
+.patient-card p {
+  text-align: center;
+
+  color: #666;
+
+  margin-bottom: 35px;
+
+  font-size: 16px;
+}
+
+/* FORM */
+
+.patient-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* FORM GROUP */
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #222;
+
+  font-weight: 600;
+}
+
+/* INPUTS */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+
+  width: 100%;
+
+  padding: 14px;
+
+  border: 1px solid #cfd9e5;
+
+  border-radius: 12px;
+
+  font-size: 15px;
+
+  outline: none;
+
+  transition: 0.3s;
+
+  background: #fff;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+
+  border-color: #0077ff;
+
+  box-shadow: 0 0 5px rgba(0,119,255,0.3);
+}
+
+/* TEXTAREA */
+
+.form-group textarea {
+  resize: none;
+  height: 100px;
+}
+
+/* SAVE BUTTON */
+
+.save-btn {
+
+  width: 100%;
+
+  padding: 15px;
+
+  border: none;
+
+  border-radius: 50px;
+
+  background: #0077ff;
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  margin-top: 10px;
+}
+
+.save-btn:hover {
+  background: #005ed1;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+
+  .patient-card {
+    width: 95%;
+    padding: 25px;
+  }
+
+  .patient-card h1 {
+    font-size: 28px;
+  }
+
+  .patient-navbar {
+    padding-left: 20px;
+  }
+
+  .patient-logo {
+    width: 90px;
+  }
+}

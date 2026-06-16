@@ -1,0 +1,245 @@
+/* ===================================
+   NAVBAR
+=================================== */
+
+.home-navbar{
+
+  width: 100%;
+
+  height: 95px;
+
+  background: white;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 6%;
+
+  border-bottom:
+  1px solid #dfe7f3;
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 1000;
+}
+
+/* ===================================
+   LOGO
+=================================== */
+
+.logo-section{
+
+  display: flex;
+
+  align-items: center;
+
+  text-decoration: none;
+}
+
+.home-logo{
+
+  width: 90px;
+
+  object-fit: contain;
+}
+
+/* ===================================
+   NAV LINKS
+=================================== */
+
+.nav-links{
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 40px;
+
+  list-style: none;
+
+  margin-left: auto;
+}
+
+.nav-link-item{
+
+  text-decoration: none;
+
+  color: #0D1B3E;
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.nav-link-item:hover{
+
+  color: #1877F2;
+}
+
+/* ===================================
+   SPECIALITY
+=================================== */
+
+.speciality-nav{
+
+  position: relative;
+}
+
+.speciality-dropdown{
+
+  position: absolute;
+
+  top: 60px;
+
+  left: -250px;
+
+  width: 950px;
+
+  background: white;
+
+  border-radius: 30px;
+
+  padding: 35px;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transform: translateY(20px);
+
+  transition: 0.4s;
+
+  box-shadow:
+  0 20px 50px rgba(0,0,0,0.1);
+}
+
+.show-dropdown{
+
+  opacity: 1;
+
+  visibility: visible;
+
+  transform: translateY(0);
+}
+
+.speciality-grid{
+
+  display: grid;
+
+  grid-template-columns:
+  repeat(3,1fr);
+
+  gap: 25px;
+}
+
+.speciality-card{
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 22px;
+
+  border-radius: 20px;
+
+  text-decoration: none;
+
+  transition: 0.3s;
+
+  background: #f8fbff;
+}
+
+.speciality-card:hover{
+
+  transform: translateY(-5px);
+
+  background: #eef5ff;
+}
+
+.speciality-card img{
+
+  width: 60px;
+
+  height: 60px;
+
+  object-fit: contain;
+}
+
+.speciality-card h4{
+
+  color: #0D1B3E;
+
+  font-size: 18px;
+
+  margin-bottom: 6px;
+}
+
+.speciality-card p{
+
+  color: #666;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+/* ===================================
+   PROFILE
+=================================== */
+
+.profile-nav{
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  cursor: pointer;
+}
+
+.profile-circle{
+
+  width: 42px;
+
+  height: 42px;
+
+  border-radius: 50%;
+
+  background:
+  linear-gradient(
+    135deg,
+    #1877F2,
+    #00c6ff
+  );
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: white;
+
+  font-size: 18px;
+
+  font-weight: 700;
+}
+
+.profile-nav span{
+
+  color: #0D1B3E;
+
+  font-weight: 600;
+}
