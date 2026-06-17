@@ -17,7 +17,7 @@ function MyAppointments() {
     if (!phone) return;
 
     fetch(
-      `http://localhost:8080/api/appointments/patient/${phone}`
+      `https://mediflow-xw59.onrender.com/api/appointments/patient/${phone}`
     )
 
       .then((res) => res.json())

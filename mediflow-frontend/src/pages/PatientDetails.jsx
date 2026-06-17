@@ -75,7 +75,7 @@ function PatientDetails() {
   try {
 
     const response = await fetch(
-      "http://localhost:8080/api/patients/save",
+      "https://mediflow-xw59.onrender.com/api/patients/save",
       {
         method: "POST",
         headers: {

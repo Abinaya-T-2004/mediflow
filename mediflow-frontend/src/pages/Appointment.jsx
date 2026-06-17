@@ -64,7 +64,7 @@ function Appointment() {
     try {
 
       const response = await fetch(
-        "http://localhost:8080/api/appointments/book",
+        "https://mediflow-xw59.onrender.com/api/appointments/book",
         {
           method: "POST",
 

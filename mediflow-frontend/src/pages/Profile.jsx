@@ -24,7 +24,7 @@ if (!mobile) {
   return;
 }
   // encode email because it has @ symbol
-  fetch(`http://localhost:8080/api/patients/get/${mobile}`)
+  fetch(`https://mediflow-xw59.onrender.com/api/patients/get/${mobile}`)
     .then((res) => {
       console.log("Response status:", res.status); // debug
       if (!res.ok) throw new Error("Not found");
