@@ -20,7 +20,10 @@ import java.util.Random;
 
 @RequestMapping("/api/appointments")
 
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = {
+    "http://localhost:5173",
+    "https://mediflow-ten-lime.vercel.app"
+})
 
 public class AppointmentController {
 
